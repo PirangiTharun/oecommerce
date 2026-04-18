@@ -4,6 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>XYZ Farms Shop</title>
+    <script>
+      // Restore path that was encoded by 404.html redirect
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var p = params.get('p');
+        var h = params.get('h') || '';
+        if (p) {
+          var base = window.location.pathname.replace(/\/$/, '');
+          window.history.replaceState(null, null, base + decodeURIComponent(p) + decodeURIComponent(h));
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
