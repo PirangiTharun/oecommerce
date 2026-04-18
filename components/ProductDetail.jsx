@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { categoryColors, FONT } from "../constants.js";
 
+function resolveImage(path) {
+  if (!path) return null;
+  if (path.startsWith("http")) return path;
+  return import.meta.env.BASE_URL + path;
+}
+
 const TABS = [
   { id: "benefits", label: "Benefits" },
   { id: "uses", label: "Uses" },
@@ -13,7 +19,8 @@ export default function ProductDetail({ product, onBack, onAddToCart, isInCart }
   const [imgError, setImgError] = useState(false);
   const cat = categoryColors[product.category];
   const discount = Math.round((1 - product.price / product.originalPrice) * 100);
-  const showEmoji = !product.image || imgError;
+  const imgSrc = resolveImage(product.image);
+  const showEmoji = !imgSrc || imgError;
 
   return (
     <div style={{ minHeight: "100vh", background: "#FAFAF8", fontFamily: FONT, animation: "pageEnter 0.38s cubic-bezier(0.22,1,0.36,1) both" }}>
@@ -86,7 +93,7 @@ export default function ProductDetail({ product, onBack, onAddToCart, isInCart }
                 </span>
               ) : (
                 <img
-                  src={product.image}
+                  src={imgSrc}
                   alt={product.name}
                   onError={() => setImgError(true)}
                   style={{

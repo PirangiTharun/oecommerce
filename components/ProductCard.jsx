@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { categoryColors, FONT } from "../constants.js";
 
+function resolveImage(path) {
+  if (!path) return null;
+  if (path.startsWith("http")) return path;
+  return import.meta.env.BASE_URL + path;
+}
+
 export default function ProductCard({ product, onView, onAddToCart, isInCart }) {
   const [hover, setHover] = useState(false);
   const [imgError, setImgError] = useState(false);
   const cat = categoryColors[product.category];
   const discount = Math.round((1 - product.price / product.originalPrice) * 100);
-  const showEmoji = !product.image || imgError;
+  const imgSrc = resolveImage(product.image);
+  const showEmoji = !imgSrc || imgError;
 
   return (
     <div
@@ -56,7 +63,7 @@ export default function ProductCard({ product, onView, onAddToCart, isInCart }) 
           </span>
         ) : (
           <img
-            src={product.image}
+            src={imgSrc}
             alt={product.name}
             onError={() => setImgError(true)}
             style={{
