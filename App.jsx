@@ -7,6 +7,7 @@ import ProductCard from "./components/ProductCard.jsx";
 import ProductDetail from "./components/ProductDetail.jsx";
 import CartSidebar from "./components/CartSidebar.jsx";
 import Toast from "./components/Toast.jsx";
+import Logo from "./components/Logo.jsx";
 
 const CATEGORIES = ["All", "Vegetable", "Fruit", "Flower", "Superfood"];
 
@@ -80,12 +81,17 @@ function ShopPage({ cart, cartOpen, setCartOpen, toastMsg, handleAddToCart, hand
   return (
     <div style={{ minHeight: "100vh", background: "#FAFAF8", fontFamily: FONT }}>
       <nav style={navStyle}>
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <span style={{ fontSize: "26px" }}>🌿</span>
-          <span style={brandStyle}>XYZ <span style={{ color: "#16A34A" }}>Farms</span></span>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Logo size={36} />
+          <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.2 }}>
+            <span className="brand-name" style={brandStyle}>Phyto Health <span style={{ color: "#16A34A" }}>Organics</span></span>
+            <span className="brand-tagline" style={{ fontSize: "10px", color: "#888", fontWeight: 500, fontFamily: FONT, letterSpacing: "0.3px", fontStyle: "italic" }}>
+              Nurturing Nature, Nurturing Lives
+            </span>
+          </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ fontSize: "12px", color: "#888", fontWeight: 500, fontFamily: FONT }}>
+          <span className="nav-subtitle" style={{ fontSize: "12px", color: "#888", fontWeight: 500, fontFamily: FONT }}>
             Premium Natural Powders
           </span>
           <CartIcon count={cartCount} onClick={() => setCartOpen(true)} />
@@ -117,7 +123,7 @@ function ShopPage({ cart, cartOpen, setCartOpen, toastMsg, handleAddToCart, hand
             <span style={{ color: "#16A34A" }}>Powdered Perfectly</span>
           </h1>
           <p style={{ margin: "0 auto 32px", maxWidth: "560px", fontSize: "17px", color: "#555", lineHeight: 1.75, fontWeight: 400, fontFamily: FONT }}>
-            Premium organic powders from Gauribidanur — preserving the natural colour, flavour, and nutritional value of every ingredient.
+            Premium organic powders from Telangana — preserving the natural colour, flavour, and nutritional value of every ingredient.
           </p>
           <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
             {["🌿 Vegetable", "🍊 Fruit", "🌸 Flower", "🌊 Superfood"].map(tag => (
@@ -132,13 +138,13 @@ function ShopPage({ cart, cartOpen, setCartOpen, toastMsg, handleAddToCart, hand
       </div>
 
       {/* FILTERS + SEARCH */}
-      <div style={{
+      <div className="filters-bar" style={{
         maxWidth: "1200px", margin: "0 auto",
         padding: "32px clamp(16px, 4vw, 32px) 0",
         display: "flex", alignItems: "center", justifyContent: "space-between",
         flexWrap: "wrap", gap: "16px",
       }}>
-        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+        <div className="filters-scroll" style={{ display: "flex", gap: "8px", overflowX: "auto", WebkitOverflowScrolling: "touch", paddingBottom: "4px", flexShrink: 0 }}>
           {CATEGORIES.map(cat => (
             <button key={cat} onClick={() => setFilter(cat)} style={{
               padding: "9px 20px", borderRadius: "30px",
@@ -146,12 +152,12 @@ function ShopPage({ cart, cartOpen, setCartOpen, toastMsg, handleAddToCart, hand
               borderColor: filter === cat ? "#1a1a1a" : "#e0e0e0",
               background: filter === cat ? "#1a1a1a" : "white",
               color: filter === cat ? "white" : "#555",
-              fontSize: "13.5px", fontWeight: 600,
+              fontSize: "13.5px", fontWeight: 600, whiteSpace: "nowrap",
               cursor: "pointer", transition: "all 0.2s", fontFamily: FONT,
             }}>{cat}</button>
           ))}
         </div>
-        <div style={{ position: "relative" }}>
+        <div className="search-wrap" style={{ position: "relative" }}>
           <input
             placeholder="Search products…"
             value={search}
@@ -197,11 +203,15 @@ function ShopPage({ cart, cartOpen, setCartOpen, toastMsg, handleAddToCart, hand
       </div>
 
       <footer style={{ background: "#1a1a1a", color: "#aaa", padding: "40px clamp(16px, 4vw, 48px)", textAlign: "center" }}>
-        <div style={{ fontFamily: FONT_BRAND, fontSize: "20px", color: "white", fontWeight: 700, marginBottom: "8px" }}>
-          🌿 XYZ <span style={{ color: "#4ADE80" }}>Farms</span>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", marginBottom: "8px" }}>
+          <Logo size={28} />
+          <span style={{ fontFamily: FONT_BRAND, fontSize: "20px", color: "white", fontWeight: 700 }}>
+            Phyto Health <span style={{ color: "#4ADE80" }}>Organics</span>
+          </span>
         </div>
-        <p style={{ margin: "0 0 4px", fontSize: "13px", fontFamily: FONT }}>Premium Natural Powders · Gauribidanur, Karnataka, India</p>
-        <p style={{ margin: 0, fontSize: "13px", fontFamily: FONT }}>📞 +91 XXXXX XXXXX · ✉ info@xyzfarms.com</p>
+        <p style={{ margin: "0 0 2px", fontSize: "12px", fontFamily: FONT, color: "#888", fontStyle: "italic" }}>Nurturing Nature, Nurturing Lives</p>
+        <p style={{ margin: "8px 0 4px", fontSize: "13px", fontFamily: FONT }}>Premium Natural Powders · Telangana, India</p>
+        <p style={{ margin: 0, fontSize: "13px", fontFamily: FONT }}>📞 +91 XXXXX XXXXX · ✉ info@phytohealthorganics.com</p>
       </footer>
 
       {cartOpen && <CartSidebar cart={cart} onClose={() => setCartOpen(false)} onRemove={handleRemoveFromCart} onUpdateQty={handleUpdateQty} />}
@@ -211,6 +221,22 @@ function ShopPage({ cart, cartOpen, setCartOpen, toastMsg, handleAddToCart, hand
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap');
         * { box-sizing: border-box; }
         body { margin: 0; }
+        .filters-scroll { scrollbar-width: none; }
+        .filters-scroll::-webkit-scrollbar { display: none; }
+        @media (max-width: 600px) {
+          .filters-bar { flex-direction: column; align-items: stretch !important; }
+          .filters-scroll { width: 100%; }
+          .search-wrap { width: 100%; }
+          .search-wrap input { width: 100% !important; }
+        }
+        @media (max-width: 480px) {
+          .brand-name { font-size: 16px !important; }
+          .brand-tagline { display: none !important; }
+          .nav-subtitle { display: none !important; }
+        }
+        @media (max-width: 360px) {
+          .brand-name { font-size: 14px !important; }
+        }
       `}</style>
     </div>
   );
@@ -229,7 +255,15 @@ function ProductPage({ cart, cartOpen, setCartOpen, toastMsg, handleAddToCart, h
   return (
     <>
       <nav style={{ ...navStyle, height: "64px" }}>
-        <span style={brandStyle}>XYZ <span style={{ color: "#16A34A" }}>Farms</span></span>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Logo size={32} />
+          <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.2 }}>
+            <span className="brand-name" style={brandStyle}>Phyto Health <span style={{ color: "#16A34A" }}>Organics</span></span>
+            <span className="brand-tagline" style={{ fontSize: "10px", color: "#888", fontWeight: 500, fontFamily: FONT, letterSpacing: "0.3px", fontStyle: "italic" }}>
+              Nurturing Nature, Nurturing Lives
+            </span>
+          </div>
+        </div>
         <CartIcon count={cartCount} onClick={() => setCartOpen(true)} />
       </nav>
       <ProductDetail
@@ -244,6 +278,10 @@ function ProductPage({ cart, cartOpen, setCartOpen, toastMsg, handleAddToCart, h
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap');
         * { box-sizing: border-box; }
         body { margin: 0; }
+        @media (max-width: 480px) {
+          .brand-name { font-size: 16px !important; }
+          .brand-tagline { display: none !important; }
+        }
       `}</style>
     </>
   );
