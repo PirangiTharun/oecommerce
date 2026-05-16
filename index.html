@@ -1,25 +1,37 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phyto Health Organics</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Phyto Health Organics — Premium Organic Powders | Telangana, India</title>
+    <meta name="description" content="Phyto Health Organics crafts premium organic fruit, flower, vegetable &amp; superfood powders — chemical-free, hygienically processed, export quality. Private labelling available." />
+    <meta name="author" content="Phyto Health Organics" />
+    <meta name="theme-color" content="#1f4d36" />
+    <meta property="og:title" content="Phyto Health Organics — Premium Organic Powders" />
+    <meta property="og:description" content="Nurturing Nature, Nurturing Lives. Organic fruit, flower, vegetable &amp; superfood powders from Telangana." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" />
+    <!-- GitHub Pages SPA redirect restore -->
     <script>
-      // Restore path that was encoded by 404.html redirect
-      (function () {
-        var params = new URLSearchParams(window.location.search);
-        var p = params.get('p');
-        var h = params.get('h') || '';
-        if (p) {
-          var base = window.location.pathname.replace(/\/$/, '');
-          window.history.replaceState(null, null, base + decodeURIComponent(p) + decodeURIComponent(h));
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded[0] +
+            (decoded[1] ? '?' + decoded[1] : '') +
+            l.hash
+          );
         }
-      })();
+      }(window.location));
     </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

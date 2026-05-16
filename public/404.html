@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>XYZ Farms</title>
-  <script>
-    // Redirect deep links back to the SPA entry point, preserving the path
-    // so React Router can handle it. Based on spa-github-pages technique.
-    var l = window.location;
-    var base = l.pathname.split('/').slice(0, 2).join('/'); // e.g. /oecommerce
-    l.replace(
-      l.protocol + '//' + l.host + base + '/?p=' +
-      encodeURIComponent(l.pathname.slice(base.length) + l.search) +
-      (l.hash ? '&h=' + encodeURIComponent(l.hash) : '')
-    );
-  </script>
-</head>
-<body></body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Phyto Health Organics</title>
+    <script>
+      // SPA redirect for GitHub Pages: preserve the path in sessionStorage
+      // then redirect to index.html which will restore navigation.
+      var segmentCount = 1; // number of path segments in the repo name (/oecommerce)
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
 </html>
