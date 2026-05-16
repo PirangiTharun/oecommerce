@@ -4,14 +4,15 @@
     <meta charset="utf-8" />
     <title>Phyto Health Organics</title>
     <script>
-      // SPA redirect for GitHub Pages: preserve the path in sessionStorage
-      // then redirect to index.html which will restore navigation.
-      var segmentCount = 1; // number of path segments in the repo name (/oecommerce)
+      // gh-pages SPA redirect — based on rafgraph/spa-github-pages
+      // Redirects /oecommerce/some/path → /oecommerce/?/some/path
+      // index.html then restores the real URL via history.replaceState
+      var pathSegmentsToKeep = 1; // 1 = repo name segment (/oecommerce)
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
-        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
         (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
         l.hash
       );
