@@ -12,14 +12,6 @@ const REGIONS = [
 ];
 
 export const Route = createFileRoute("/sustainability")({
-  head: () => ({
-    meta: [
-      { title: "Sustainability — Phyto Health Organics" },
-      { name: "description", content: "Regenerative farming, solar drying, water recycling, biodegradable packaging. The roots of the Phyto Health Organics promise." },
-      { property: "og:title", content: "Sustainability — Phyto Health Organics" },
-      { property: "og:description", content: "Our root network of practices for soil, people and planet." },
-    ],
-  }),
   component: SustainabilityPage,
 });
 

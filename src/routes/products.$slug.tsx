@@ -3,23 +3,13 @@ import { motion } from "framer-motion";
 import { findProduct, PRODUCTS } from "@/data/products";
 import { ParticleField } from "@/components/ParticleField";
 import { MagneticButton } from "@/components/MagneticButton";
+import { imgUrl } from "@/lib/utils";
 
 export const Route = createFileRoute("/products/$slug")({
   loader: ({ params }) => {
     const product = findProduct(params.slug);
     if (!product) throw notFound();
     return { product };
-  },
-  head: ({ loaderData }) => {
-    const p = loaderData?.product;
-    return {
-      meta: [
-        { title: p ? `${p.name} — Phyto Health Organics` : "Product — Phyto Health Organics" },
-        { name: "description", content: p?.tagline ?? "Premium organic powder from Phyto Health Organics." },
-        { property: "og:title", content: p ? `${p.name} — Phyto Health Organics` : "Phyto Health Organics" },
-        { property: "og:description", content: p?.tagline ?? "" },
-      ],
-    };
   },
   component: ProductDetail,
 });
@@ -92,7 +82,7 @@ function ProductDetail() {
                   style={{ boxShadow: `0 0 80px ${p.scentColor}, 0 0 160px ${p.scentColor}40` }}
                 >
                   <img
-                    src={p.image}
+                    src={imgUrl(p.image)}
                     alt={p.name}
                     className="h-full w-full object-cover"
                   />
@@ -200,7 +190,7 @@ function ProductDetail() {
                 {o.image ? (
                   <div className="overflow-hidden">
                     <img
-                      src={o.image}
+                      src={imgUrl(o.image)}
                       alt={o.name}
                       className="h-36 w-full object-cover transition duration-500 group-hover:scale-105"
                       loading="lazy"
