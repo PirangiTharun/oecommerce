@@ -5,14 +5,6 @@ import { PRODUCTS } from "@/data/products";
 import { MagneticButton } from "@/components/MagneticButton";
 
 export const Route = createFileRoute("/bulk-order")({
-  head: () => ({
-    meta: [
-      { title: "Bulk Inquiry — Phyto Health Organics" },
-      { name: "description", content: "Request bulk pricing, private-label and custom packaging for Phyto Health Organics organic powders." },
-      { property: "og:title", content: "Bulk Inquiry — Phyto Health Organics" },
-      { property: "og:description", content: "Tell us your needs — we'll craft the powder, packaging and pricing." },
-    ],
-  }),
   component: BulkPage,
 });
 

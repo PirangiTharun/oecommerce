@@ -4,14 +4,6 @@ import roots from "@/assets/roots-network.jpg";
 import process from "@/assets/process-drying.jpg";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — Phyto Health Organics" },
-      { name: "description", content: "Born in Telangana — Phyto Health Organics crafts premium organic powders with reverence for soil, science and craft." },
-      { property: "og:title", content: "About Phyto Health Organics" },
-      { property: "og:description", content: "Our story, our roots, our promise." },
-    ],
-  }),
   component: AboutPage,
 });
 

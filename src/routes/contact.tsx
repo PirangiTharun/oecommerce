@@ -17,14 +17,6 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Phyto Health Organics" },
-      { name: "description", content: "Talk to Phyto Health Organics in Telangana, India. Phone, WhatsApp, email and bulk inquiry." },
-      { property: "og:title", content: "Contact Phyto Health Organics" },
-      { property: "og:description", content: "Reach our team for samples, pricing and private-label collaboration." },
-    ],
-  }),
   component: ContactPage,
 });
 

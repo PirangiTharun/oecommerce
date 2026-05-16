@@ -3,17 +3,10 @@ import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { PRODUCTS, CATEGORIES, type Category } from "@/data/products";
 import { ParticleField } from "@/components/ParticleField";
+import { imgUrl } from "@/lib/utils";
 import productHero from "@/assets/product-hero.jpg";
 
 export const Route = createFileRoute("/products/")({
-  head: () => ({
-    meta: [
-      { title: "Products — Phyto Health Organics Organic Powders" },
-      { name: "description", content: "Explore 18 premium organic powders — fruit, flower, vegetable & superfood — crafted in Telangana, India." },
-      { property: "og:title", content: "Phyto Health Organics — Premium Organic Powders" },
-      { property: "og:description", content: "Discover our full range of organic powders." },
-    ],
-  }),
   component: ProductsPage,
 });
 
@@ -85,7 +78,7 @@ function ProductsPage() {
                   {p.image ? (
                     <div className="mt-6 overflow-hidden rounded-2xl">
                       <img
-                        src={p.image}
+                        src={imgUrl(p.image)}
                         alt={p.name}
                         className="h-44 w-full object-cover transition duration-500 group-hover:scale-105"
                         loading="lazy"
