@@ -80,7 +80,7 @@ function ContactPage() {
             </form>
           </motion.div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="lg:col-span-5 space-y-4">
             <a href="https://wa.me/917899868441" target="_blank" rel="noreferrer"
               className="block rounded-3xl bg-[oklch(0.7_0.16_150)] p-7 text-cream shadow-soft hover:scale-[1.01] transition">
               <div className="text-[10px] uppercase tracking-[0.4em] opacity-80">WhatsApp</div>
