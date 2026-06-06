@@ -10,7 +10,9 @@ export function SiteFooter() {
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="text-display text-4xl tracking-[0.18em]">
-              PHYTO HEALTH <span className="text-turmeric-glow">ORGANICS</span>
+              <span className="text-[oklch(0.72_0.14_145)]">PHYTO</span>{" "}
+              <span className="text-turmeric-glow">HEALTH</span>{" "}
+              <span className="text-[oklch(0.72_0.14_145)]">ORGANICS</span>
             </div>
             <p className="mt-5 max-w-md text-cream/80 leading-relaxed">
               Premium organic fruit, flower, vegetable and superfood powders —

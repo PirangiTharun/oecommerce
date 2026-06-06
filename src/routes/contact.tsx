@@ -50,9 +50,9 @@ function ContactPage() {
       </section>
 
       <section className="pb-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-12 lg:px-12">
+        <div className="mx-auto max-w-5xl px-6 lg:px-12 space-y-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="lg:col-span-7 rounded-3xl glass p-8 lg:p-10">
+            className="rounded-3xl glass p-8 lg:p-10 [border-top:none]">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               <Field label="Your name" error={errors.name?.message}>
                 <input {...register("name")} className="ayra-input" placeholder="Asha Patel" />
@@ -80,7 +80,7 @@ function ContactPage() {
             </form>
           </motion.div>
 
-          <div className="lg:col-span-5 space-y-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <a href="https://wa.me/917899868441" target="_blank" rel="noreferrer"
               className="block rounded-3xl bg-[oklch(0.7_0.16_150)] p-7 text-cream shadow-soft hover:scale-[1.01] transition">
               <div className="text-[10px] uppercase tracking-[0.4em] opacity-80">WhatsApp</div>
@@ -89,10 +89,10 @@ function ContactPage() {
             </a>
             <a href="mailto:info@phytohealthorganics.com" className="block rounded-3xl bg-forest p-7 text-cream shadow-soft">
               <div className="text-[10px] uppercase tracking-[0.4em] text-turmeric-glow">Email</div>
-              <div className="mt-2 text-display text-2xl">info@phytohealthorganics.com</div>
+              <div className="mt-2 text-display text-2xl break-all">info@phytohealthorganics.com</div>
               <div className="mt-2 text-sm text-cream/80">For samples, pricing & specifications.</div>
             </a>
-            <div className="rounded-3xl glass p-7">
+            <div className="rounded-3xl glass p-7 sm:col-span-2 lg:col-span-1">
               <div className="text-[10px] uppercase tracking-[0.4em] text-turmeric">Visit</div>
               <div className="mt-2 text-display text-2xl text-forest-deep">Phyto Health Organics</div>
               <p className="mt-2 text-sm text-forest-deep/70">Telangana, India</p>
