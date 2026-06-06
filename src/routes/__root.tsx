@@ -11,6 +11,7 @@ import { OrganicCursor } from "../components/OrganicCursor";
 import { Preloader } from "../components/Preloader";
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
+import { ScrollToTop } from "../components/ScrollToTop";
 
 function NotFoundComponent() {
   return (
@@ -82,6 +83,7 @@ function RootComponent() {
             <Outlet />
           </main>
           <SiteFooter />
+          <ScrollToTop />
         </div>
       </SmoothScroll>
     </QueryClientProvider>

@@ -8,8 +8,8 @@ const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/products", label: "Products" },
-  { to: "/industries", label: "Industries" },
-  { to: "/sustainability", label: "Sustainability" },
+  { to: "/industries", label: "We Serve" },
+  { to: "/sustainability", label: "Our Roots" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -41,8 +41,10 @@ export function SiteNav() {
             <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-forest text-cream shadow-glow-forest">
               <Leaf />
             </span>
-            <span className="text-display text-lg tracking-[0.22em] text-forest-deep">
-              PHYTO HEALTH <span className="text-turmeric">ORGANICS</span>
+              <span className="text-display text-lg tracking-[0.22em]">
+              <span className="text-forest-deep">PHYTO</span>{" "}
+              <span className="text-turmeric">HEALTH</span>{" "}
+              <span className="text-forest-deep">ORGANICS</span>
             </span>
           </Link>
 
@@ -51,8 +53,8 @@ export function SiteNav() {
               <Link
                 key={n.to}
                 to={n.to}
-                className="relative rounded-full px-4 py-2 text-[13px] font-medium uppercase tracking-[0.18em] text-forest-deep/80 transition hover:text-forest-deep"
-                activeProps={{ className: "text-forest-deep" }}
+                className="relative rounded-full px-4 py-2 text-[13px] font-medium uppercase tracking-[0.18em] text-forest-deep/70 transition-all duration-200 hover:text-turmeric hover:bg-forest-deep/5"
+                activeProps={{ className: "!text-forest-deep bg-forest-deep/8" }}
               >
                 {n.label}
               </Link>

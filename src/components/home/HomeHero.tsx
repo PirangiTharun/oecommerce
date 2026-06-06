@@ -262,7 +262,7 @@ export function HomeHero() {
           />
           <span className="mb-5 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-[10px] uppercase tracking-[0.4em] text-forest-deep shadow-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-turmeric animate-glow-pulse" />
-            Cultivated in Telangana, India
+            Cultivated in India
           </span>
           <h1 className="text-display text-[clamp(46px,9vw,140px)] leading-[0.95] text-forest-deep text-legible">
             Pure Nature.

@@ -11,7 +11,7 @@ export function Preloader() {
     const t = setTimeout(() => {
       sessionStorage.setItem("ayra:loaded", "1");
       setDone(true);
-    }, 3200);
+    }, 4200);
     return () => clearTimeout(t);
   }, []);
 
@@ -116,11 +116,10 @@ export function Preloader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.4, duration: 0.7 }}
           >
-            <div
-              className="text-display text-[clamp(28px,4vw,46px)] tracking-[0.32em] text-cream"
-              style={{ color: "oklch(0.965 0.015 88)" }}
-            >
-              PHYTO HEALTH ORGANICS
+            <div className="text-display text-[clamp(28px,4vw,46px)] tracking-[0.32em]">
+              <span style={{ color: "oklch(0.72 0.14 145)" }}>PHYTO</span>{" "}
+              <span style={{ color: "oklch(0.86 0.17 82)" }}>HEALTH</span>{" "}
+              <span style={{ color: "oklch(0.72 0.14 145)" }}>ORGANICS</span>
             </div>
             <div className="mt-2 text-[10px] uppercase tracking-[0.5em] text-[oklch(0.86_0.17_82)]">
               Nurturing Nature, Nurturing Lives

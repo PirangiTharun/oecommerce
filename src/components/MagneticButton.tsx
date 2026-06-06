@@ -32,8 +32,8 @@ export function MagneticButton({
     variant === "primary"
       ? "bg-forest text-cream shadow-glow-forest hover:bg-forest-deep"
       : variant === "gold"
-      ? "bg-turmeric text-forest-deep shadow-glow-gold hover:brightness-105"
-      : "glass border border-forest-deep/30 text-forest-deep hover:bg-forest hover:text-cream hover:border-forest";
+      ? "bg-turmeric text-forest-deep shadow-glow-gold hover:bg-[oklch(0.80_0.16_75)]"
+      : "glass border border-forest-deep/30 text-forest-deep hover:bg-beige hover:border-forest-deep/50";
 
   return (
     <motion.button
@@ -42,11 +42,11 @@ export function MagneticButton({
       onMouseLeave={onLeave}
       style={{ x: tx, y: ty }}
       data-cursor="hover"
-      className={`group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-7 py-4 text-[12px] font-medium uppercase tracking-[0.24em] transition-colors duration-500 ${styles} ${className}`}
+      className={`group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-7 py-4 text-[12px] font-medium uppercase tracking-[0.24em] transition-colors duration-200 ${styles} ${className}`}
       {...(rest as object)}
     >
       <span className="absolute inset-0 -z-0 opacity-0 transition group-hover:opacity-100"
-        style={{ background: "radial-gradient(circle at center, oklch(0.86 0.17 82 / 0.4), transparent 65%)" }}/>
+        style={{ background: "radial-gradient(circle at center, oklch(0.86 0.17 82 / 0.12), transparent 60%)" }}/>
       <span className="relative">{children}</span>
       <span className="relative transition-transform duration-300 group-hover:translate-x-1">→</span>
     </motion.button>
