@@ -1,6 +1,6 @@
 "use client";
 import { Link } from "@tanstack/react-router";
-import logoSrc from "@/assets/logo.png";
+import { Mail, MessageCircle } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -24,11 +24,13 @@ export function SiteFooter() {
             <p className="mt-2 text-sm text-cream/60 italic">Nurturing Nature, Nurturing Lives</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="https://wa.me/917899868441" target="_blank" rel="noreferrer"
-                className="rounded-full bg-turmeric px-5 py-2.5 text-sm font-medium uppercase tracking-[0.2em] text-forest-deep shadow-glow-gold transition hover:scale-[1.03]">
+                className="inline-flex items-center gap-2 rounded-full bg-turmeric px-5 py-2.5 text-sm font-medium uppercase tracking-[0.2em] text-forest-deep shadow-glow-gold transition hover:scale-[1.03]">
+                <MessageCircle size={15} />
                 WhatsApp
               </a>
               <a href="mailto:info@phytohealthorganics.com"
-                className="rounded-full border border-cream/30 px-5 py-2.5 text-sm font-medium uppercase tracking-[0.2em] text-cream transition hover:bg-cream/10">
+                className="inline-flex items-center gap-2 rounded-full border border-cream/30 px-5 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-cream transition hover:bg-cream/10">
+                <Mail size={14} />
                 info@phytohealthorganics.com
               </a>
             </div>
@@ -50,7 +52,9 @@ export function SiteFooter() {
               PHYTO HEALTH ORGANICS<br />
               Telangana, India<br />
               <a href="tel:+917899868441" className="hover:text-turmeric">+91 78998 68441</a><br />
-              <a href="mailto:info@phytohealthorganics.com" className="hover:text-turmeric">info@phytohealthorganics.com</a>
+              <a href="mailto:info@phytohealthorganics.com" className="inline-flex items-center gap-1.5 hover:text-turmeric text-xs">
+                <Mail size={12} />info@phytohealthorganics.com
+              </a>
             </address>
           </div>
         </div>

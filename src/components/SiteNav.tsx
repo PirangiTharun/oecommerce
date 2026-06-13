@@ -40,13 +40,16 @@ export function SiteNav() {
             <img
               src={logoSrc}
               alt="Phyto Health Organics"
-              className="h-16 w-auto object-contain translate-y-2 transition-transform duration-300 group-hover:scale-105"
+              className="h-10 sm:h-16 w-auto object-contain translate-y-1 sm:translate-y-2 transition-transform duration-300 group-hover:scale-105"
               style={{ mixBlendMode: "multiply" }}
             />
-            <span className="text-display text-2xl tracking-[0.22em]">
-              <span className="text-forest-deep">PHYTO</span>{" "}
-              <span className="text-turmeric">HEALTH</span>{" "}
-              <span className="text-forest-deep">ORGANICS</span>
+            <span className="text-display text-[18px] sm:text-xl lg:text-2xl tracking-[0.13em] sm:tracking-[0.18em] lg:tracking-[0.22em] leading-tight">
+              <span className="whitespace-nowrap">
+                <span className="text-forest-deep">PHYTO</span>{" "}
+                <span className="text-turmeric">HEALTH</span>
+              </span>
+              <br className="sm:hidden" />
+              {" "}<span className="text-forest-deep">ORGANICS</span>
             </span>
           </Link>
 
