@@ -9,9 +9,9 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SustainabilityRouteImport } from './routes/sustainability'
+import { Route as WeServeRouteImport } from './routes/we-serve'
 import { Route as ProductsRouteImport } from './routes/products'
-import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as OurRootsRouteImport } from './routes/our-roots'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BulkOrderRouteImport } from './routes/bulk-order'
 import { Route as AboutRouteImport } from './routes/about'
@@ -19,9 +19,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 
-const SustainabilityRoute = SustainabilityRouteImport.update({
-  id: '/sustainability',
-  path: '/sustainability',
+const WeServeRoute = WeServeRouteImport.update({
+  id: '/we-serve',
+  path: '/we-serve',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductsRoute = ProductsRouteImport.update({
@@ -29,9 +29,9 @@ const ProductsRoute = ProductsRouteImport.update({
   path: '/products',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndustriesRoute = IndustriesRouteImport.update({
-  id: '/industries',
-  path: '/industries',
+const OurRootsRoute = OurRootsRouteImport.update({
+  id: '/our-roots',
+  path: '/our-roots',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -70,9 +70,9 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/bulk-order': typeof BulkOrderRoute
   '/contact': typeof ContactRoute
-  '/industries': typeof IndustriesRoute
+  '/our-roots': typeof OurRootsRoute
   '/products': typeof ProductsRouteWithChildren
-  '/sustainability': typeof SustainabilityRoute
+  '/we-serve': typeof WeServeRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -81,8 +81,8 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/bulk-order': typeof BulkOrderRoute
   '/contact': typeof ContactRoute
-  '/industries': typeof IndustriesRoute
-  '/sustainability': typeof SustainabilityRoute
+  '/our-roots': typeof OurRootsRoute
+  '/we-serve': typeof WeServeRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products': typeof ProductsIndexRoute
 }
@@ -92,9 +92,9 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/bulk-order': typeof BulkOrderRoute
   '/contact': typeof ContactRoute
-  '/industries': typeof IndustriesRoute
+  '/our-roots': typeof OurRootsRoute
   '/products': typeof ProductsRouteWithChildren
-  '/sustainability': typeof SustainabilityRoute
+  '/we-serve': typeof WeServeRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -105,9 +105,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/bulk-order'
     | '/contact'
-    | '/industries'
+    | '/our-roots'
     | '/products'
-    | '/sustainability'
+    | '/we-serve'
     | '/products/$slug'
     | '/products/'
   fileRoutesByTo: FileRoutesByTo
@@ -116,8 +116,8 @@ export interface FileRouteTypes {
     | '/about'
     | '/bulk-order'
     | '/contact'
-    | '/industries'
-    | '/sustainability'
+    | '/our-roots'
+    | '/we-serve'
     | '/products/$slug'
     | '/products'
   id:
@@ -126,9 +126,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/bulk-order'
     | '/contact'
-    | '/industries'
+    | '/our-roots'
     | '/products'
-    | '/sustainability'
+    | '/we-serve'
     | '/products/$slug'
     | '/products/'
   fileRoutesById: FileRoutesById
@@ -138,18 +138,18 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BulkOrderRoute: typeof BulkOrderRoute
   ContactRoute: typeof ContactRoute
-  IndustriesRoute: typeof IndustriesRoute
+  OurRootsRoute: typeof OurRootsRoute
   ProductsRoute: typeof ProductsRouteWithChildren
-  SustainabilityRoute: typeof SustainabilityRoute
+  WeServeRoute: typeof WeServeRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sustainability': {
-      id: '/sustainability'
-      path: '/sustainability'
-      fullPath: '/sustainability'
-      preLoaderRoute: typeof SustainabilityRouteImport
+    '/we-serve': {
+      id: '/we-serve'
+      path: '/we-serve'
+      fullPath: '/we-serve'
+      preLoaderRoute: typeof WeServeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/products': {
@@ -159,11 +159,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/industries': {
-      id: '/industries'
-      path: '/industries'
-      fullPath: '/industries'
-      preLoaderRoute: typeof IndustriesRouteImport
+    '/our-roots': {
+      id: '/our-roots'
+      path: '/our-roots'
+      fullPath: '/our-roots'
+      preLoaderRoute: typeof OurRootsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -230,9 +230,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BulkOrderRoute: BulkOrderRoute,
   ContactRoute: ContactRoute,
-  IndustriesRoute: IndustriesRoute,
+  OurRootsRoute: OurRootsRoute,
   ProductsRoute: ProductsRouteWithChildren,
-  SustainabilityRoute: SustainabilityRoute,
+  WeServeRoute: WeServeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

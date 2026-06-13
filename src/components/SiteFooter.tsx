@@ -40,8 +40,8 @@ export function SiteFooter() {
             <ul className="mt-5 space-y-2.5 text-sm text-cream/85">
               <li><Link to="/about" className="hover:text-turmeric">About</Link></li>
               <li><Link to="/products" className="hover:text-turmeric">Products</Link></li>
-              <li><Link to="/industries" className="hover:text-turmeric">Industries</Link></li>
-              <li><Link to="/sustainability" className="hover:text-turmeric">Sustainability</Link></li>
+              <li><Link to="/we-serve" className="hover:text-turmeric">We Serve</Link></li>
+              <li><Link to="/our-roots" className="hover:text-turmeric">Our Roots</Link></li>
               <li><Link to="/bulk-order" className="hover:text-turmeric">Bulk Order</Link></li>
               <li><Link to="/contact" className="hover:text-turmeric">Contact</Link></li>
             </ul>

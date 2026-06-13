@@ -11,7 +11,7 @@ const REGIONS = [
   { x: "50%", y: "32%", label: "MP — Garlic" },
 ];
 
-export const Route = createFileRoute("/sustainability")({
+export const Route = createFileRoute("/our-roots")({
   component: SustainabilityPage,
 });
 

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Industries } from "@/components/home/Industries";
 
-export const Route = createFileRoute("/industries")({
+export const Route = createFileRoute("/we-serve")({
   component: () => (
     <div className="pt-32">
       <div className="mx-auto max-w-5xl px-6 pt-12 text-center lg:px-12">

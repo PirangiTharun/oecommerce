@@ -38,12 +38,6 @@ export function Industries() {
               <div className="text-4xl">{it.icon}</div>
               <div className="mt-5 text-display text-2xl text-forest-deep">{it.title}</div>
               <p className="mt-2 text-sm text-forest-deep/70 leading-relaxed">{it.copy}</p>
-              <Link
-                to="/industries"
-                className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-forest transition group-hover:text-turmeric"
-              >
-                Learn more <span className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
             </motion.div>
           ))}
         </div>
