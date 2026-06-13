@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logoSrc from "@/assets/logo.png";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -27,21 +28,22 @@ export function SiteNav() {
       initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-2.5" : "py-5"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-2.5" : "py-5"
+        }`}
     >
       <div className="mx-auto max-w-7xl px-5 lg:px-10">
         <div
-          className={`flex items-center justify-between rounded-full px-5 lg:px-7 py-3 transition-all duration-500 glass shadow-soft ${
-            scrolled ? "" : ""
-          }`}
+          className={`flex items-center justify-between rounded-full px-5 lg:px-7 py-1 transition-all duration-500 glass shadow-soft ${scrolled ? "" : ""
+            }`}
         >
-          <Link to="/" className="group flex items-center gap-2.5" aria-label="Phyto Health Organics — Home">
-            <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-forest text-cream shadow-glow-forest">
-              <Leaf />
-            </span>
-              <span className="text-display text-lg tracking-[0.22em]">
+          <Link to="/" className="group flex items-center gap-2" aria-label="Phyto Health Organics — Home">
+            <img
+              src={logoSrc}
+              alt="Phyto Health Organics"
+              className="h-16 w-auto object-contain translate-y-2 transition-transform duration-300 group-hover:scale-105"
+              style={{ mixBlendMode: "multiply" }}
+            />
+            <span className="text-display text-2xl tracking-[0.22em]">
               <span className="text-forest-deep">PHYTO</span>{" "}
               <span className="text-turmeric">HEALTH</span>{" "}
               <span className="text-forest-deep">ORGANICS</span>
@@ -110,16 +112,3 @@ export function SiteNav() {
   );
 }
 
-function Leaf() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M3 21c0-9 7-16 18-18-2 11-9 18-18 18Zm0 0c5-5 9-7 14-9"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}

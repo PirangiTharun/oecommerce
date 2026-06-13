@@ -1,5 +1,6 @@
 "use client";
 import { Link } from "@tanstack/react-router";
+import logoSrc from "@/assets/logo.png";
 
 export function SiteFooter() {
   return (
@@ -9,10 +10,12 @@ export function SiteFooter() {
       <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-12">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="text-display text-4xl tracking-[0.18em]">
-              <span className="text-[oklch(0.72_0.14_145)]">PHYTO</span>{" "}
-              <span className="text-turmeric-glow">HEALTH</span>{" "}
-              <span className="text-[oklch(0.72_0.14_145)]">ORGANICS</span>
+            <div className="flex items-center gap-3">
+              <div className="text-display text-4xl tracking-[0.18em]">
+                <span className="text-[oklch(0.72_0.14_145)]">PHYTO</span>{" "}
+                <span className="text-turmeric-glow">HEALTH</span>{" "}
+                <span className="text-[oklch(0.72_0.14_145)]">ORGANICS</span>
+              </div>
             </div>
             <p className="mt-5 max-w-md text-cream/80 leading-relaxed">
               Premium organic fruit, flower, vegetable and superfood powders —
