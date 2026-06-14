@@ -37,7 +37,7 @@ export function FinalCTA() {
         </motion.p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
           <Link to="/contact"><MagneticButton variant="gold">Contact Us</MagneticButton></Link>
-          <Link to="/contact"><MagneticButton variant="ghost" className="!text-cream !border-cream/30 hover:!bg-cream hover:!text-forest-deep">Request Sample</MagneticButton></Link>
+
           <Link to="/bulk-order"><MagneticButton variant="ghost" className="!text-cream !border-cream/30 hover:!bg-cream hover:!text-forest-deep">Bulk Inquiry</MagneticButton></Link>
         </div>
       </div>

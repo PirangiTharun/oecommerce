@@ -47,9 +47,7 @@ function ProductDetail() {
               <Link to="/contact">
                 <MagneticButton variant="primary">Enquire Now</MagneticButton>
               </Link>
-              <Link to="/contact">
-                <MagneticButton variant="ghost">Request Free Sample</MagneticButton>
-              </Link>
+
               <Link to="/bulk-order">
                 <MagneticButton variant="ghost">Bulk / OEM Order</MagneticButton>
               </Link>
@@ -165,9 +163,7 @@ function ProductDetail() {
                 <Link to="/contact">
                   <MagneticButton variant="primary">Enquire Now</MagneticButton>
                 </Link>
-                <Link to="/contact">
-                  <MagneticButton variant="ghost">Request Sample</MagneticButton>
-                </Link>
+
                 <Link to="/bulk-order">
                   <MagneticButton variant="ghost">Bulk / OEM</MagneticButton>
                 </Link>
