@@ -50,7 +50,7 @@ export function SiteNav() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="hidden items-center gap-1 xl:flex">
             {NAV.map((n) => (
               <Link
                 key={n.to}
@@ -63,7 +63,7 @@ export function SiteNav() {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Link
               to="/bulk-order"
               className="group inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[12px] font-medium uppercase tracking-[0.2em] text-cream shadow-glow-forest transition hover:bg-turmeric hover:text-forest-deep"
@@ -76,7 +76,7 @@ export function SiteNav() {
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden rounded-full glass p-2.5"
+            className="xl:hidden rounded-full glass p-2.5"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -86,7 +86,7 @@ export function SiteNav() {
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-2 flex flex-col gap-1 rounded-3xl glass p-4 lg:hidden"
+            className="mt-2 flex flex-col gap-1 rounded-3xl glass p-4 xl:hidden"
           >
             {NAV.map((n) => (
               <Link

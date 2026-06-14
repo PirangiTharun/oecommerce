@@ -147,7 +147,7 @@ function BulkPage() {
               <SelectField name="packaging" label="Packaging & quantity" options={PACKAGING_OPTIONS} placeholder="Select packaging…" />
               <SelectField name="timeline" label="Timeline" options={TIMELINE_OPTIONS} placeholder="Select timeline…" />
               <div className="sm:col-span-2">
-                <Textarea name="notes" label="Other notes" placeholder="Private label, certifications, blends, custom MOQ…" rows={6} />
+                <Textarea name="notes" label="Other notes" placeholder="Private label, certifications, blends, custom MOQ…" rows={6} showWordCount maxWords={250} />
               </div>
             </div>
           </div>
@@ -191,16 +191,48 @@ function SelectField({ name, label, options, placeholder }: { name: string; labe
   );
 }
 
-function Textarea({ name, label, placeholder, rows = 3, className = "" }: { name: string; label: string; placeholder?: string; rows?: number; className?: string }) {
+function Textarea({ name, label, placeholder, rows = 3, className = "", showWordCount, maxWords }: { name: string; label: string; placeholder?: string; rows?: number; className?: string; showWordCount?: boolean; maxWords?: number }) {
+  const [text, setText] = useState("");
+  const words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const val = e.target.value;
+    if (maxWords) {
+      const currentWords = val.trim() === "" ? 0 : val.trim().split(/\s+/).length;
+      if (currentWords > maxWords) {
+        const match = val.match(new RegExp(`^\\s*(?:\\S+\\s+){0,${maxWords - 1}}\\S+\\s*`));
+        if (match) {
+          if (match[0] === text) {
+            e.target.value = text;
+          } else {
+            setText(match[0]);
+          }
+        } else {
+          e.target.value = text;
+        }
+        return;
+      }
+    }
+    setText(val);
+  };
+
   return (
     <label className={`block ${className}`}>
       <span className="text-[10px] uppercase tracking-[0.3em] text-forest-deep/70">{label}</span>
-      <textarea
-        name={name}
-        rows={rows}
-        placeholder={placeholder}
-        className="mt-2 w-full resize-none rounded-2xl bg-cream/70 border border-forest/15 px-4 py-3 text-sm outline-none transition focus:border-turmeric focus:ring-4 focus:ring-turmeric/20"
-      />
+        <textarea
+          name={name}
+          rows={rows}
+          placeholder={placeholder}
+          value={text}
+          onChange={handleChange}
+          maxLength={3000}
+          className="mt-2 w-full resize-none rounded-2xl bg-cream/70 border border-forest/15 px-4 py-3 text-sm outline-none transition focus:border-turmeric focus:ring-4 focus:ring-turmeric/20"
+        />
+      {showWordCount && (
+        <div className="mt-1.5 text-right text-xs text-forest-deep/40">
+          {words}{maxWords ? `/${maxWords}` : ''} word{words !== 1 ? 's' : ''}
+        </div>
+      )}
     </label>
   );
 }
