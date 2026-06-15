@@ -12,7 +12,7 @@ const schema = z.object({
   company: z.string().trim().max(120).optional().or(z.literal("")),
   email: z.string().trim().email("Valid email required").max(160),
   phone: z.string().trim().max(40).optional().or(z.literal("")),
-  message: z.string().trim().min(10, "A few more words please").max(1500),
+  message: z.string().trim().min(10, "A few more words please").max(3000, "Character limit exceeded"),
 });
 type FormData = z.infer<typeof schema>;
 
@@ -21,10 +21,36 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset, watch, setValue } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
   const [sent, setSent] = useState(false);
+
+  const messageVal = watch("message") || "";
+  const maxWords = 250;
+  const words = messageVal.trim() === "" ? 0 : messageVal.trim().split(/\s+/).length;
+
+  const { onChange: onMessageChange, ...messageRegisterRest } = register("message");
+
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const val = e.target.value;
+    const currentWords = val.trim() === "" ? 0 : val.trim().split(/\s+/).length;
+    if (currentWords > maxWords) {
+      const match = val.match(new RegExp(`^\\s*(?:\\S+\\s+){0,${maxWords - 1}}\\S+\\s*`));
+      if (match) {
+        if (match[0] === messageVal) {
+          e.target.value = messageVal;
+        } else {
+          setValue("message", match[0], { shouldValidate: true, shouldDirty: true });
+          e.target.value = match[0];
+        }
+      } else {
+        e.target.value = messageVal;
+      }
+      return;
+    }
+    onMessageChange(e);
+  };
 
   const onSubmit = async (data: FormData) => {
     // Static submission: open mail client with prefilled body.
@@ -69,7 +95,17 @@ function ContactPage() {
                 <input {...register("email")} type="email" className="ayra-input" placeholder="you@brand.com" />
               </Field>
               <Field label="Message" error={errors.message?.message}>
-                <textarea {...register("message")} rows={5} className="ayra-input resize-none" placeholder="Tell us about the powder, quantity and timeline you're considering..." />
+                <textarea 
+                  {...messageRegisterRest} 
+                  onChange={handleMessageChange}
+                  maxLength={3000}
+                  rows={5} 
+                  className="ayra-input resize-none" 
+                  placeholder="Tell us about the powder, quantity and timeline you're considering..." 
+                />
+                <div className="mt-1.5 text-right text-xs text-forest-deep/40">
+                  {words}/{maxWords} word{words !== 1 ? 's' : ''}
+                </div>
               </Field>
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <MagneticButton type="submit" variant="primary">{isSubmitting ? "Sending..." : "Send Message"}</MagneticButton>

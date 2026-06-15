@@ -19,17 +19,19 @@ export function RootNetwork() {
       <div className="absolute inset-0 opacity-25 mix-blend-overlay"
         style={{ background: "radial-gradient(ellipse at top, oklch(0.86 0.17 82 / 0.6), transparent 60%)" }}/>
       <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="grid items-center gap-14 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <span className="text-[10px] uppercase tracking-[0.45em] text-turmeric-glow">Roots that hold</span>
-            <h2 className="mt-3 text-display text-[clamp(36px,5vw,72px)] leading-[1.02]">
-              An ecosystem
-              <br /><em className="not-italic shimmer-text">grown together</em>.
-            </h2>
-            <p className="mt-6 max-w-md text-cream/80 leading-relaxed">
-              Every branch of Phyto Health Organics feeds the same root — a commitment to
-              purity, to people and to the planet that holds it all.
-            </p>
+        <div className="grid gap-14 lg:grid-cols-12">
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <div>
+              <span className="text-[10px] uppercase tracking-[0.45em] text-turmeric-glow">Roots that hold</span>
+              <h2 className="mt-3 text-display text-[clamp(36px,5vw,72px)] leading-[1.02]">
+                An ecosystem
+                <br /><em className="not-italic shimmer-text">grown together</em>.
+              </h2>
+              <p className="mt-6 max-w-md text-cream/80 leading-relaxed">
+                Every branch of Phyto Health Organics feeds the same root — a commitment to
+                purity, to people and to the planet that holds it all.
+              </p>
+            </div>
             <ul className="mt-8 grid grid-cols-2 gap-2 text-sm text-cream/85">
               {BRANCHES.map((b) => (
                 <li
@@ -111,7 +113,7 @@ export function RootNetwork() {
                 key={active ?? "idle"}
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="absolute left-1/2 top-1/2 w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-2xl glass-dark p-5 text-center"
+                className="absolute left-1/2 bottom-0 w-[260px] -translate-x-1/2 rounded-2xl glass-dark p-5 text-center"
               >
                 {active ? (
                   <>
