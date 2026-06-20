@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { MagneticButton } from "@/components/MagneticButton";
+import { SocialIcons } from "@/components/SiteFooter";
 import touchEarth from "@/assets/touch-earth.jpg";
 
 const schema = z.object({
@@ -128,6 +129,11 @@ function ContactPage() {
               <div className="mt-2 text-display text-2xl break-all">info@phytohealthorganics.com</div>
               <div className="mt-2 text-sm text-cream/80">For samples, pricing & specifications.</div>
             </a>
+            <div className="rounded-3xl bg-forest-deep p-7 text-cream">
+              <div className="text-[10px] uppercase tracking-[0.4em] text-turmeric-glow">Follow Us</div>
+              <p className="mt-2 text-sm text-cream/70">Stay connected for updates, new products and organic living tips.</p>
+              <SocialIcons className="mt-5 [&_a]:border-cream/25 [&_a]:bg-cream/10 [&_a:hover]:border-turmeric/70 [&_a:hover]:bg-cream/20" />
+            </div>
             <div className="rounded-3xl glass p-7 sm:col-span-2 lg:col-span-1">
               <div className="text-[10px] uppercase tracking-[0.4em] text-turmeric">Visit</div>
               <div className="mt-2 text-display text-2xl text-forest-deep">Phyto Health Organics</div>
