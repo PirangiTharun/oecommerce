@@ -8,7 +8,7 @@ export const router = createRouter({
   routeTree,
   basepath: "/oecommerce",
   context: { queryClient },
-  scrollRestoration: true,
+  scrollRestoration: false,
   defaultPreloadStaleTime: 0,
 });
 

@@ -32,7 +32,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Nutraceuticals", "Food & Beverage", "Wellness Brands", "Sports Nutrition"],
     nutrition: ["Protein", "B vitamins", "Beta-carotene", "Iron", "Phycocyanin"],
     origin: "South India",
-    image: "/images/spirulina.jpeg",
+    image: "/images/spirulina.png",
   },
   {
     slug: "turmeric-powder",
@@ -48,7 +48,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Nutraceuticals", "Cosmetics", "Food & Beverage", "Ayurveda"],
     nutrition: ["Curcuminoids", "Vitamin C", "Iron", "Manganese"],
     origin: "Telangana highlands",
-    image: "/images/turmeric.jpeg",
+    image: "/images/turmeric.png",
   },
   {
     slug: "garlic-powder",
@@ -64,7 +64,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Food & Beverage", "Nutraceuticals", "Bulk Manufacturing"],
     nutrition: ["Allicin", "Selenium", "Vitamin B6", "Manganese"],
     origin: "Telangana & Madhya Pradesh",
-    image: "/images/garlic.jpeg",
+    image: "/images/garlic.png",
   },
   {
     slug: "onion-powder",
@@ -80,7 +80,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Food & Beverage", "Retailers", "Bulk Manufacturers"],
     nutrition: ["Quercetin", "Vitamin C", "Folate", "Potassium"],
     origin: "Telangana & Maharashtra",
-    image: "/images/onion.jpeg",
+    image: "/images/onion.png",
   },
   {
     slug: "tomato-powder",
@@ -96,7 +96,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Food & Beverage", "Cosmetics", "Nutraceuticals"],
     nutrition: ["Lycopene", "Vitamin C", "Vitamin K", "Potassium"],
     origin: "Telangana",
-    image: "/images/tomato.jpeg",
+    image: "/images/tomato.png",
   },
   {
     slug: "pumpkin-powder",
@@ -112,7 +112,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Food & Beverage", "Wellness Brands", "Cosmetics"],
     nutrition: ["Beta-carotene", "Vitamin A", "Fiber", "Potassium"],
     origin: "Telangana & Tamil Nadu",
-    image: "https://images.unsplash.com/photo-1570586437263-ab629fccc818?w=600&h=600&fit=crop&auto=format",
+    image: "/images/pumpkin.png",
   },
   {
     slug: "mango-powder",
@@ -128,7 +128,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Food & Beverage", "Wellness Brands", "Retailers"],
     nutrition: ["Vitamin A", "Vitamin C", "Polyphenols", "Folate"],
     origin: "Telangana & Maharashtra",
-    image: "https://images.unsplash.com/photo-1553279768-865429fa0078?w=600&h=600&fit=crop&auto=format",
+    image: "/images/mango.png",
   },
   {
     slug: "papaya-powder",
@@ -144,7 +144,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Cosmetics", "Nutraceuticals", "Wellness Brands"],
     nutrition: ["Papain", "Vitamin C", "Vitamin A", "Lycopene"],
     origin: "South India",
-    image: "https://images.unsplash.com/photo-1617112848923-cc2234396a8d?w=600&h=600&fit=crop&auto=format",
+    image: "/images/papaya.png",
   },
   {
     slug: "papaya-seed-powder",
@@ -160,7 +160,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Nutraceuticals", "Herbal Medicine"],
     nutrition: ["Oleic acid", "Carpaine", "Fiber"],
     origin: "South India",
-    image: "/images/papaya-seeds.jpeg",
+    image: "/images/papayaseeds.png",
   },
   {
     slug: "banana-powder",
@@ -176,7 +176,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Food & Beverage", "Nutraceuticals", "Wellness Brands"],
     nutrition: ["Potassium", "Magnesium", "Vitamin B6", "Resistant starch"],
     origin: "Telangana & Tamil Nadu",
-    image: "https://images.unsplash.com/photo-1528825871115-3581a5387919?w=600&h=600&fit=crop&auto=format",
+    image: "/images/banana.png",
   },
   {
     slug: "guava-powder",
@@ -192,7 +192,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Food & Beverage", "Cosmetics", "Wellness Brands"],
     nutrition: ["Vitamin C", "Lycopene", "Fiber", "Polyphenols"],
     origin: "Telangana",
-    image: "/images/guava.jpeg",
+    image: "/images/guava.png",
   },
   {
     slug: "apple-powder",
@@ -208,7 +208,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Food & Beverage", "Cosmetics", "Wellness Brands"],
     nutrition: ["Pectin", "Quercetin", "Vitamin C", "Fiber"],
     origin: "Himachal Pradesh & Telangana",
-    image: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=600&h=600&fit=crop&auto=format",
+    image: "/images/apple.png",
   },
   {
     slug: "pomegranate-powder",
@@ -224,7 +224,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Cosmetics", "Nutraceuticals", "Food & Beverage"],
     nutrition: ["Punicalagins", "Vitamin C", "Polyphenols", "Potassium"],
     origin: "Telangana & Maharashtra",
-    image: "/images/pomegranate.jpeg",
+    image: "/images/pomagrenate.png",
   },
   {
     slug: "hibiscus-powder",
@@ -240,7 +240,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Cosmetics", "Herbal Medicine", "Food & Beverage"],
     nutrition: ["Anthocyanins", "Vitamin C", "Iron"],
     origin: "Telangana",
-    image: "/images/hibiscus.jpeg",
+    image: "/images/hibiscus.png",
   },
   {
     slug: "rose-petal-powder",
@@ -256,6 +256,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Cosmetics", "Wellness Brands", "Herbal Medicine"],
     nutrition: ["Vitamin C", "Antioxidants", "Essential oils"],
     origin: "Kannauj & Telangana",
+    image: "/images/rosepetals.png",
   },
   {
     slug: "chamomile-powder",
@@ -271,6 +272,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Wellness Brands", "Cosmetics", "Herbal Medicine"],
     nutrition: ["Apigenin", "Bisabolol", "Antioxidants"],
     origin: "Himachal Pradesh & Telangana",
+    image: "/images/chamomile.png",
   },
   {
     slug: "calendula-powder",
@@ -286,6 +288,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Cosmetics", "Herbal Medicine", "Wellness Brands"],
     nutrition: ["Carotenoids", "Flavonoids", "Triterpenes"],
     origin: "North India & Telangana",
+    image: "/images/calendula.png",
   },
   {
     slug: "lavender-powder",
@@ -301,7 +304,7 @@ export const PRODUCTS: Product[] = [
     industries: ["Cosmetics", "Wellness Brands", "Herbal Medicine"],
     nutrition: ["Linalool", "Antioxidants"],
     origin: "Kashmir & Telangana",
-    image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=600&h=600&fit=crop&auto=format",
+    image: "/images/lavender.png",
   },
 ];
 

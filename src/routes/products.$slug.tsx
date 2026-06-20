@@ -63,65 +63,52 @@ function ProductDetail() {
           </div>
 
           <div className="relative flex justify-center lg:col-span-5">
-            {/* Aroma / scent visualization */}
-            <div className="relative h-[60vmin] max-h-[520px] w-[60vmin] max-w-[520px]">
-              {/* ambient glow — always shown */}
+            {/* ambient glow behind the card */}
+            <motion.div
+              className="absolute inset-0 -z-0 rounded-full blur-3xl animate-breathe"
+              style={{ background: `radial-gradient(circle at 50% 50%, ${p.scentColor}80, transparent 70%)` }}
+            />
+            {p.image ? (
               <motion.div
-                className="absolute inset-0 rounded-full animate-breathe"
-                style={{ background: `radial-gradient(circle at 50% 50%, ${p.scentColor}, transparent 65%)`, filter: "blur(4px)" }}
-              />
-              {p.image ? (
-                /* product photo centrepiece */
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute inset-[10%] overflow-hidden rounded-full shadow-2xl"
-                  style={{ boxShadow: `0 0 80px ${p.scentColor}, 0 0 160px ${p.scentColor}40` }}
-                >
+                initial={{ opacity: 0, y: 20, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+                className="relative z-10 w-full rounded-3xl overflow-hidden"
+                style={{
+                  boxShadow: `0 16px 64px ${p.scentColor}50`,
+                  maskImage: "linear-gradient(to bottom, transparent 0%, black 18%, black 80%, transparent 100%), linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+                  maskComposite: "intersect",
+                  WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 18%, black 80%, transparent 100%), linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+                  WebkitMaskComposite: "source-in",
+                }}
+              >
+                <div>
                   <img
                     src={imgUrl(p.image)}
                     alt={p.name}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                   />
-                  {/* subtle colour overlay to blend with theme */}
-                  <div
-                    className="absolute inset-0 rounded-full"
-                    style={{ background: `radial-gradient(circle at 70% 20%, ${p.scentColor}30, transparent 55%)` }}
-                  />
-                </motion.div>
-              ) : (
-                <>
-                  {/* powder orb with emoji — shown when no photo */}
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-[18%] rounded-full"
-                    style={{
-                      background: `conic-gradient(from 0deg, ${p.scentColor}, oklch(0.36 0.07 156), ${p.scentColor})`,
-                      boxShadow: `0 0 80px ${p.scentColor}, inset 0 0 40px oklch(0 0 0 / 0.2)`,
-                    }}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-[6vmin] drop-shadow-lg" role="img" aria-label={p.name}>{p.emoji}</span>
-                  </div>
-                </>
-              )}
-              {/* nutrient particles — always shown */}
-              {Array.from({ length: 14 }).map((_, i) => (
-                <motion.span
-                  key={i}
-                  className="absolute left-1/2 top-1/2 h-2 w-2 rounded-full"
-                  style={{ background: "oklch(0.96 0.02 88)", boxShadow: `0 0 8px ${p.scentColor}` }}
-                  animate={{
-                    x: [0, Math.cos(i) * 180, 0],
-                    y: [0, Math.sin(i) * 180, 0],
-                    opacity: [0.2, 0.9, 0.2],
+                </div>
+              </motion.div>
+            ) : (
+              /* powder orb with emoji — shown when no photo */
+              <div className="relative w-full aspect-[4/3] flex items-center justify-center rounded-3xl overflow-hidden"
+                style={{
+                  background: `conic-gradient(from 0deg, ${p.scentColor}40, oklch(0.36 0.07 156 / 0.15), ${p.scentColor}40)`,
+                  boxShadow: `0 16px 64px ${p.scentColor}40`,
+                }}>
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-[15%] rounded-full"
+                  style={{
+                    background: `conic-gradient(from 0deg, ${p.scentColor}, oklch(0.36 0.07 156), ${p.scentColor})`,
+                    boxShadow: `0 0 80px ${p.scentColor}, inset 0 0 40px oklch(0 0 0 / 0.2)`,
                   }}
-                  transition={{ duration: 6 + (i % 4), repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
                 />
-              ))}
-            </div>
+                <span className="relative z-10 text-[8vmin] drop-shadow-lg" role="img" aria-label={p.name}>{p.emoji}</span>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -184,13 +171,16 @@ function ProductDetail() {
               <Link key={o.slug} to="/products/$slug" params={{ slug: o.slug }}
                 className="group overflow-hidden rounded-3xl border border-forest/10 bg-cream transition hover:border-turmeric/40">
                 {o.image ? (
-                  <div className="overflow-hidden">
+                  <div className="relative h-36 overflow-hidden"
+                    style={{ background: `radial-gradient(circle at 40% 40%, ${o.scentColor}40, transparent 70%)` }}>
                     <img
                       src={imgUrl(o.image)}
                       alt={o.name}
-                      className="h-36 w-full object-cover transition duration-500 group-hover:scale-105"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
+                    {/* soft gradient fade at bottom to blend into card */}
+                    <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-cream/60 to-transparent" />
                   </div>
                 ) : (
                   <div className="flex items-center justify-center h-36"

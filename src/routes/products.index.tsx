@@ -76,17 +76,19 @@ function ProductsPage() {
                   <div className="mt-3 text-display text-3xl text-forest-deep">{p.name}</div>
                   <p className="mt-2 text-sm text-forest-deep/70 leading-relaxed">{p.tagline}</p>
                   {p.image ? (
-                    <div className="mt-6 overflow-hidden rounded-2xl">
+                    <div className="relative mt-6 overflow-hidden rounded-2xl"
+                      style={{ background: `radial-gradient(ellipse at 60% 30%, ${p.scentColor}35, ${p.scentColor}08 70%)` }}>
                       <img
                         src={imgUrl(p.image)}
                         alt={p.name}
-                        className="h-44 w-full object-cover transition duration-500 group-hover:scale-105"
+                        className="w-full h-auto block transition duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
+                      <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-cream via-cream/50 to-transparent" />
                     </div>
                   ) : (
                     <div
-                      className="mt-6 flex h-44 items-center justify-center rounded-2xl"
+                      className="mt-6 aspect-[4/3] flex items-center justify-center rounded-2xl"
                       style={{ background: `radial-gradient(ellipse at 60% 30%, ${p.scentColor}40, ${p.scentColor}10 70%)` }}
                     >
                       <span className="text-7xl drop-shadow-md" role="img" aria-label={p.name}>{p.emoji}</span>
