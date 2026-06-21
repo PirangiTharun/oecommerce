@@ -311,14 +311,14 @@ export function HomeStory() {
     },
     {
       img: processDrying,
-      kicker: "02 · Drying",
+      kicker: "02 · Preserve",
       title: "Preserving Natural Properties",
       copy: "Freshly harvested materials undergo controlled drying processes designed to preserve color, aroma, nutrients, and bioactive compounds. Every batch is processed under strict quality parameters to maintain natural integrity.",
       checks: ["Controlled Drying Techniques", "Consistent Moisture Control", "Nutrient Retention Focus", "Quality-Assured Processing"],
     },
     {
       img: powderBurst,
-      kicker: "03 · Mill",
+      kicker: "03 · Process",
       title: "Precision Processing & Quality Control",
       copy: "Dried botanicals are transformed into fine powders using controlled milling systems. Each batch undergoes quality inspections, particle size control, and laboratory verification to ensure uniformity and performance suitable for use in nutraceuticals, functional foods, beverages, cosmetics and wellness products.",
       checks: ["Fine Powder Processing", "Batch Consistency Monitoring", "Quality Verification Procedures", "International Standards Compliance"],
