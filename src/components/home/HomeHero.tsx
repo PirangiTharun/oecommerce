@@ -305,26 +305,30 @@ export function HomeStory() {
     {
       img: heroFarm,
       kicker: "01 · Field",
-      title: "From living soil",
-      copy: "Every powder begins in regenerative fields tended without chemical pesticides — the wind moving through the crops, the dew, the patience.",
+      title: "Where Quality Begins",
+      copy: "At Phyto Health Organics, we work with carefully sourced botanical ingredients originating from agricultural regions known for their quality and consistency. Whether it is turmeric, spirulina, moringa, fruit powders, or flower-based ingredients, attention starts at the source. Every powder starts long before it reaches a processing facility. It begins in the field, where crops are grown, harvested, and selected for their natural characteristics.",
+      checks: ["Carefully Selected Farms", "Sustainable Cultivation Practices", "Traceable Raw Materials", "Focus on consistency and purity"],
     },
     {
       img: processDrying,
       kicker: "02 · Drying",
-      title: "Sun-dried, slow-cured",
-      copy: "Harvests are gently sun-cured on bamboo trays — preserving color, aroma and the delicate phytonutrients that machines often destroy.",
+      title: "Preserving Natural Properties",
+      copy: "Freshly harvested materials undergo controlled drying processes designed to preserve color, aroma, nutrients, and bioactive compounds. Every batch is processed under strict quality parameters to maintain natural integrity.",
+      checks: ["Controlled Drying Techniques", "Consistent Moisture Control", "Nutrient Retention Focus", "Quality-Assured Processing"],
     },
     {
       img: powderBurst,
       kicker: "03 · Mill",
-      title: "Stone-milled, micron-fine",
-      copy: "Stone milling at controlled temperatures keeps every micron of nutrition alive, transforming the harvest into vibrant, aromatic powder.",
+      title: "Precision Processing & Quality Control",
+      copy: "Dried botanicals are transformed into fine powders using controlled milling systems. Each batch undergoes quality inspections, particle size control, and laboratory verification to ensure uniformity and performance suitable for use in nutraceuticals, functional foods, beverages, cosmetics and wellness products.",
+      checks: ["Fine Powder Processing", "Batch Consistency Monitoring", "Quality Verification Procedures", "International Standards Compliance"],
     },
     {
       img: productHero,
-      kicker: "04 · Pack",
-      title: "Sealed for the world",
-      copy: "Hygienically packed, certified for export, ready for your formulation, your shelf, your private label — with the Phyto Health Organics standard inside.",
+      kicker: "04 · Packaging",
+      title: "Get Set Go",
+      copy: "The final stage is preparing products for their journey to customers around the world. From bulk ingredients orders to customized export requirements, our focus is on delivering products safely, efficiently and professionally. Every shipment is prepared with the documentation and handling standards required for international trade.",
+      checks: ["Food-Grade Packaging Solutions", "Export Documentation Support", "Secure Transportation Preparation", "Global Shipment Support"],
     },
   ];
 
@@ -348,7 +352,7 @@ export function HomeStory() {
   );
 }
 
-function StoryRow({ chapter, reverse }: { chapter: { img: string; kicker: string; title: string; copy: string }; reverse: boolean }) {
+function StoryRow({ chapter, reverse }: { chapter: { img: string; kicker: string; title: string; copy: string; checks: string[] }; reverse: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [80, -80]);
@@ -373,6 +377,16 @@ function StoryRow({ chapter, reverse }: { chapter: { img: string; kicker: string
           {chapter.title}
         </h3>
         <p className="mt-5 text-base text-forest-deep/75 leading-relaxed max-w-md">{chapter.copy}</p>
+        <ul className="mt-6 space-y-2">
+          {chapter.checks.map((item) => (
+            <li key={item} className="flex items-center gap-2.5 text-sm text-forest-deep/80">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-turmeric/20 text-turmeric">
+                ✓
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

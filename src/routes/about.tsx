@@ -46,7 +46,7 @@ function AboutPage() {
           <div>
             <h2 className="text-display text-4xl text-forest-deep lg:text-5xl">Slow, on purpose.</h2>
             <p className="mt-5 text-forest-deep/75 leading-relaxed">
-              Sun-curing on bamboo, low-temperature stone milling, hand-sorted batches and lab-tested releases. Industrial speed strips nutrients. Our pace protects them.
+              Freshly harvested materials undergo controlled drying processes designed to preserve color, aroma, nutrients, and bioactive compounds. Every batch is processed under strict quality parameters to maintain natural integrity.
             </p>
           </div>
         </div>
