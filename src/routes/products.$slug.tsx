@@ -143,7 +143,7 @@ function ProductDetail() {
                   Interested in <em className="not-italic shimmer-text">{p.name}</em>?
                 </h2>
                 <p className="mt-4 text-forest-deep/70 leading-relaxed">
-                  We supply in bulk and private-label formats with flexible MOQ. Reach out for pricing, certifications, or a free sample.
+                  We supply in bulk and private-label formats with flexible MOQ. Reach out for pricing, certifications.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 lg:justify-end">

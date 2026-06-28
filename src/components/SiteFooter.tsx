@@ -69,7 +69,7 @@ export function SiteFooter() {
             <ul className="mt-5 space-y-3 text-sm text-cream/85">
               <li className="flex items-start gap-2.5">
                 <MapPin size={14} className="mt-0.5 shrink-0 text-turmeric/70" />
-                <span>Telangana, India</span>
+                <span>Bangalore, Karnataka, India</span>
               </li>
               <li>
                 <a href="tel:+917899868441"

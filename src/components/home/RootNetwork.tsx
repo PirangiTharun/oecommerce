@@ -5,10 +5,10 @@ import { useState } from "react";
 const BRANCHES = [
   { id: "organic", label: "Organic Farming", angle: -70, len: 220, copy: "Regenerative practices, no synthetic pesticides, soil-first cultivation." },
   { id: "hygiene", label: "Hygienic Production", angle: -45, len: 250, copy: "Stainless-steel facility, cleanroom protocols, lab-tested batches." },
-  { id: "nutrient", label: "Nutrient Preservation", angle: -15, len: 270, copy: "Low-temperature drying & stone milling protect vitamins and aromatics." },
+  { id: "nutrient", label: "Nutrient Preservation", angle: -15, len: 270, copy: "Low-temperature drying & milling protect vitamins and aromatics." },
   { id: "export", label: "Export Quality", angle: 15, len: 270, copy: "FSSAI, ISO & export-grade packaging — globally compliant." },
-  { id: "sustain", label: "Sustainability", angle: 45, len: 250, copy: "Solar drying, water recycling, zero-waste milling, biodegradable packs." },
-  { id: "label", label: "Private Labelling", angle: 70, len: 220, copy: "Your brand, our craft — custom blends, packaging and certifications." },
+  { id: "sustain", label: "Sustainability", angle: 45, len: 250, copy: "drying, water recycling, zero-waste milling, biodegradable packs." },
+  { id: "label", label: "Private Labelling", angle: 70, len: 220, copy: "Your brand, our craft — necessary packaging certifications." },
 ];
 
 export function RootNetwork() {

@@ -137,11 +137,11 @@ function ContactPage() {
             <div className="rounded-3xl glass p-7 sm:col-span-2 lg:col-span-1">
               <div className="text-[10px] uppercase tracking-[0.4em] text-turmeric">Visit</div>
               <div className="mt-2 text-display text-2xl text-forest-deep">Phyto Health Organics</div>
-              <p className="mt-2 text-sm text-forest-deep/70">Telangana, India</p>
+              <p className="mt-2 text-sm text-forest-deep/70">Bangalore, Karnataka, India</p>
               <div className="mt-4 overflow-hidden rounded-2xl">
                 <iframe
                   title="Phyto Health Organics location"
-                  src="https://www.google.com/maps?q=Telangana,+India&output=embed"
+                  src="https://www.google.com/maps?q=Bangalore,+Karnataka,+India&output=embed"
                   className="h-56 w-full border-0"
                   loading="lazy"
                 />

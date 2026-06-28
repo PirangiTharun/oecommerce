@@ -10,7 +10,7 @@ const REASONS = [
   { title: "No Preservatives", copy: "Stable shelf life through process, not chemistry.", glow: "oklch(0.86 0.17 82)" },
   { title: "Export Quality", copy: "FSSAI, ISO and globally compliant batches.", glow: "oklch(0.74 0.08 305)" },
   { title: "Hygienic Processing", copy: "Stainless-steel facility, lab-tested at every stage.", glow: "oklch(0.55 0.18 25)" },
-  { title: "Sustainable Farming", copy: "Regenerative practices, solar drying, water recycling.", glow: "oklch(0.55 0.13 145)" },
+  { title: "Sustainable Farming", copy: "Regenerative practices, drying, water recycling.", glow: "oklch(0.55 0.13 145)" },
   { title: "Custom Packaging", copy: "From sachets to 25 kg drums — your way.", glow: "oklch(0.78 0.14 60)" },
   { title: "Private Labelling", copy: "Your brand, our craftsmanship — end-to-end.", glow: "oklch(0.65 0.18 18)" },
 ];
