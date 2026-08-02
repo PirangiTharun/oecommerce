@@ -1,0 +1,1 @@
+const o="88bc3008-ba8b-46b8-a5ad-eb6665c69d1c",a="https://api.web3forms.com/submit";async function c(e,n){e.append("access_key",o),n&&e.append("subject",n);const t=await fetch(a,{method:"POST",body:e}),s=await t.json();if(!t.ok||s.success!==!0)throw new Error(s.message??"Something went wrong while sending your message. Please try again.");return s}export{c as s};
