@@ -3,7 +3,7 @@ import { Outlet, Link, createRootRouteWithContext, useRouter } from "@tanstack/r
 
 import { SmoothScroll } from "../components/SmoothScroll";
 import { OrganicCursor } from "../components/OrganicCursor";
-import { Preloader } from "../components/Preloader";
+import { LaunchAnimation } from "../components/LaunchAnimation";
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
 import { ScrollToTop } from "../components/ScrollToTop";
@@ -73,7 +73,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <SmoothScroll>
-        <Preloader />
+        <LaunchAnimation />
         <OrganicCursor />
         <div className="grain relative min-h-screen bg-cream text-forest-deep">
           <SiteNav />
