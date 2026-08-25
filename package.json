@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/generate-sitemap.cjs",
     "preview": "vite preview",
+    "generate-sitemap": "node scripts/generate-sitemap.cjs",
     "lint": "eslint .",
     "format": "prettier --write ."
   },

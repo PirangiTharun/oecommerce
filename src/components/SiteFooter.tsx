@@ -6,7 +6,7 @@ import { imgUrl } from "@/lib/utils";
 export const socialLinks = [
   { href: "https://wa.me/917899868441", src: "/images/whatsapp.png", alt: "WhatsApp" },
   {
-    href: "https://instagram.com/phytohealthorganics",
+    href: "https://instagram.com/phyto.health.organics",
     src: "/images/instagram.png",
     alt: "Instagram",
   },
